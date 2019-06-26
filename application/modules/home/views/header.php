@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="<?php echo base_url()?>assets/js/jquery-3.4.1.min.js"></script>
+    <script src="<?php echo base_url()?>assets/js/jquery.cookie.js"></script>
+	<script src="<?php echo base_url()?>assets/js/bootstrap.js"></script>
+    <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url()?>assets/js/custom.js"></script> 
     <link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css" />
 	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.css" />  
 	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css" />    
     <link href="<?php echo base_url()?>assets/fonts/fontawesome-free-5.8.1/css/all.css" rel="stylesheet"> <!--load all styles -->
-    <script src="<?php echo base_url()?>assets/js/jquery-3.4.1.min.js"></script>
-    <script src="<?php echo base_url()?>assets/js/jquery.cookie.js"></script>
-    <script src="<?php echo base_url()?>assets/js/custom.js"></script> 
+    
 
     <title>Niagahoster</title>
 </head>
