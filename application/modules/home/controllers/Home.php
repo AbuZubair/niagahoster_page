@@ -24,14 +24,25 @@
         public function get_header()
         {           
 
-            $data = $this->model->getData('get_menu_template');
-
-            if($data->status==200){
-                $data = array(
-                    'data_menu' => $data->data->data_menu
-                );
+            $response_local = $this->model->getMenu('tmp_menu');
+           
+            if($response_local){
+                $data = $this->model->getMenu('tmp_menu');
+            }else{
+                $response_api   = $this->model->getData('get_menu_template');
+                
+                if($response_api->status!=200){
+                    echo("Please check the connection");
+                    return false;
+                }else{
+                    $data = $response_api->data->data_menu;
+                }
             }
 
+            $data = array(
+                'data_menu' => $data
+            );
+            
             $this->load->view('header', $data);
 
         }
@@ -39,10 +50,22 @@
         public function get_content()
         {
             
-           $response = $this->model->getData('get_price_template');
+            $response_local = $this->model->getPrice('tmp_paket');
+            
+            if($response_local){
+                $data = $response_local;
+            }else{
+                $response_api = $this->model->getData('get_price_template');
 
-            $data = $response->data->data_paket;
-        
+                if($response_api->status!=200){
+                    echo("Please check the connection");
+                    return false;
+                }else{
+                    $data = $response_api->data->data_paket;
+                }
+                
+            }
+            
            /*get max pengguna */
            $users = $this->max_attribute_in_array($data,'pengguna');
 
